@@ -10,6 +10,10 @@ function App() {
       setNewTask(""); //Réinitialise l'entrée
     }
   };
+
+  const completeTask = (index) => {
+    setTasks([...tasks, tasks.map((task, i) => (task.completed = i === index ? true : task))]);
+  }
   
   const deleteTask = (index) => {
     setTasks(tasks.filter((_, i) => i !== index));
@@ -20,17 +24,20 @@ function App() {
       <div>
         <input type="text" placeholder="Ajouter une tâche..." value={newTask}
         onChange={(e) => setNewTask(e.target.value)} />
-        <button onclick={addTask}>Ajouter</button>
+        <button onClick={addTask}>Ajouter</button>
       </div>
       <ul>
-        {tasks.map((task, index) => (
-          <li key={index} style={{ margingBottom: "10px" }}>
-            <span>{task.text}</span>
-            <button onclick={() => deleteTask(index)}
-              style={{ marginLeft: "10px"}}>
+        {tasks && tasks.length > 0 ? (
+          tasks.map((task, index) => (
+          <li key={index} style={{ marginBottom: "10px" }}>
+            <span>{ task.text }</span>
+            <button onClick={() => deleteTask(index)}
+              style={{ marginLeft: "10px"}}>Delete
             </button>
+            <button onClick={() => completeTask(index)} 
+            style={{ marginLeft: "10px"}}>Completed</button>
           </li>
-        ))}
+        ))) : (<p>Aucune tache disponible</p>)}
       </ul>
     </div>
   );
