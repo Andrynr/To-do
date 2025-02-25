@@ -37,62 +37,67 @@
   }
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 #corps {
   height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(11, 11, 175, 0.418) 10%, rgba(15, 15, 216, 0.3));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(11, 11, 175, 0.418) 10%,
+    rgba(15, 15, 216, 0.3)
+  );
 }
 
-.task {
-  background: #0C3AA2;
-}
-
-.complet {
-  text-decoration: wavy;
-  background-color: #2da9DC;
-}
-
-.date {
-  width: 50px;
-  flex: 1;
-  overflow: clip;
-  text-overflow: clip;
-  height: auto;
-  white-space-collapse: collapse;
-}
-
-.date::over {
-  position: fixed;
-  display: flex;
-  width: auto;
-  z-index: 2;
-  transposition: 2 5 1;
-}
-
-button {
-  margin: 2px;
-}
-
-ul > p {
+input {
   position: relative;
-  margin: 10px auto;
-  font-size: large;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.liste-taches {
+  position: relative;
+  top: 20px;
+  margin: 5px auto;
 }
 
 ul {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  width: 100%;
+  padding: 0;
+  margin-top: 10px;
+  gap: 10px;
+  list-style: none;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 li {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  width: 40vw;
-  min-width: fit-content;
+  max-width: 480px;
+  width: 100%;
   padding: 10px;
+  border-radius: 15px;
 }
 
-li > span {
+.task {
+  background: #0c3aa2;
+}
+
+.complet {
+  text-decoration: wavy;
+  background-color: #2da9dc;
+}
+
+.texte {
+  position: relative;
+  display: flex;
+  width: auto;
   flex: 2;
   text-align: left;
   overflow: hidden;
@@ -100,16 +105,56 @@ li > span {
   white-space: nowrap;
 }
 
-li > button {
-  display: flex;
+.date {
+  display: block;
+  padding: auto;
+  margin-right: 0;
+  margin-left: auto;
+  justify-content: center;
+  max-width: 78px;
+  height: 20px;
+  overflow: hidden;
+  text-overflow: clip;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 660px) {
-  ul { 
+.fullDate {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  border-radius: 10px;
+  padding: 3px;
+  text-align: center;
+  transform: translate(-12%);
+  top: 0;
+  max-width: 78px;
+  max-height: fit-content;
+  background-color: gainsboro;
+  z-index: 1;
+}
+
+.date:hover > .fullDate {
+  display: block;
+  visibility: visible;
+}
+
+button {
+  margin: 2px;
+}
+
+li > span {
+}
+
+li > button {
+  gap: 5px;
+  border-radius: 10px;
+}
+
+/* @media screen and (max-width: 767px) {
+  ul {
     padding-left: 0%;
-    justify-content: center;
   }
-  li { 
+  li {
     width: 100%;
   }
-}
+} */
