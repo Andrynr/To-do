@@ -37,61 +37,15 @@
   }
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-#corps {
-  height: 100vh;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(11, 11, 175, 0.418) 10%,
-    rgba(15, 15, 216, 0.3)
-  );
-}
-
-input {
-  position: relative;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.liste-taches {
-  position: relative;
-  top: 20px;
-  margin: 5px auto;
-}
-
-ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  width: 100%;
-  padding: 0;
-  margin-top: 10px;
-  gap: 10px;
-  list-style: none;
-  flex-wrap: wrap;
-  justify-content: space-between;
+html, body {
+  min-height: 100vh;
 }
 
 li {
   position: relative;
   display: flex;
-  max-width: 480px;
-  width: 100%;
   padding: 10px;
   border-radius: 15px;
-}
-
-.task {
-  background: #0c3aa2;
-}
-
-.complet {
-  text-decoration: wavy;
-  background-color: #2da9dc;
 }
 
 .texte {
@@ -108,14 +62,13 @@ li {
 .date {
   display: block;
   padding: auto;
-  margin-right: 0;
-  margin-left: auto;
-  justify-content: center;
-  max-width: 78px;
+  max-width: 2.5em;
+  min-width: 2.5em;
   height: 20px;
   overflow: hidden;
   text-overflow: clip;
   cursor: pointer;
+  color: var(--bs-gray-800);
 }
 
 .fullDate {
@@ -125,11 +78,9 @@ li {
   border-radius: 10px;
   padding: 3px;
   text-align: center;
-  transform: translate(-12%);
-  top: 0;
-  max-width: 78px;
-  max-height: fit-content;
-  background-color: gainsboro;
+  top: 2px;
+  transform: translateX(-50px);
+  max-width: 90px;
   z-index: 1;
 }
 
@@ -142,19 +93,40 @@ button {
   margin: 2px;
 }
 
-li > span {
-}
-
 li > button {
   gap: 5px;
   border-radius: 10px;
 }
-
-/* @media screen and (max-width: 767px) {
-  ul {
-    padding-left: 0%;
-  }
-  li {
-    width: 100%;
-  }
-} */
+/*colors*/
+body {
+  background: linear-gradient(
+    to bottom,
+    #BDD1C5 10%,
+    rgba(15, 15, 216, 0.6)
+  ) fixed;
+}
+#btn-ajout {
+  background-color: #118AB2;
+}
+.task {
+  background: #0B6477;
+}
+.fullDate {
+  background-color: #C8A8E9;
+}
+.complet {
+  text-decoration: wavy;
+  background-color: var(--bs-teal);
+}
+.btn.btn-delete {
+  background-color: #979C6B;
+}
+.btn.btn-delete:hover {
+  background-color: #EF476F;
+}
+.modal-header {
+  background: #928DAB;
+}
+.modal-divider {
+  color: #928DAB;
+}
