@@ -49,7 +49,7 @@ function App() {
   };
   
   useEffect(() => {
-     if(tasks.length == 0) { id.current = 0 }
+     if(tasks.length === 0) { id.current = 0 }
    });
 
   return (
