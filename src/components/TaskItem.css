@@ -6,11 +6,6 @@ li {
 }
 
 .texte {
-  position: relative;
-  display: flex;
-  width: auto;
-  flex: 2;
-  text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -46,7 +41,20 @@ li {
   visibility: visible;
 }
 
-li > button {
-  gap: 5px;
-  border-radius: 10px;
+/*Colors*/
+.task {
+  background: #0B6477;
+}
+.fullDate {
+  background-color: #C8A8E9;
+}
+.complet {
+  text-decoration: wavy;
+  background-color: var(--bs-teal);
+}
+.btn.btn-delete {
+  background-color: #979C6B;
+}
+.btn.btn-delete:hover {
+  background-color: #EF476F;
 }

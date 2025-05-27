@@ -1,4 +1,5 @@
 import "./TaskItem.css";
+
 function TaskItem({task, onDel, onComplete}) {
 	return (
 		<li key={task.id} className={`task ${task.classe}`} >
