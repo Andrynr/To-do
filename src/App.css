@@ -41,66 +41,8 @@ html, body {
   min-height: 100vh;
 }
 
-li {
-  position: relative;
-  display: flex;
-  padding: 10px;
-  border-radius: 15px;
-}
 
-.texte {
-  position: relative;
-  display: flex;
-  width: auto;
-  flex: 2;
-  text-align: left;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.date {
-  display: block;
-  padding: auto;
-  max-width: 2.5em;
-  min-width: 2.5em;
-  height: 20px;
-  overflow: hidden;
-  text-overflow: clip;
-  cursor: pointer;
-  color: var(--bs-gray-800);
-}
-
-.fullDate {
-  position: absolute;
-  display: none;
-  visibility: hidden;
-  border-radius: 10px;
-  padding: 3px;
-  text-align: center;
-  top: 2px;
-  transform: translateX(-50px);
-  max-width: 90px;
-  z-index: 1;
-}
-
-.date:hover > .fullDate {
-  display: block;
-  visibility: visible;
-}
-
-li > button {
-  gap: 5px;
-  border-radius: 10px;
-}
 /*colors*/
-body {
-  background: linear-gradient(
-    to bottom,
-    #BDD1C5 10%,
-    rgba(15, 15, 216, 0.6)
-  ) fixed;
-}
 #btn-ajout {
   background-color: #118AB2;
 }
