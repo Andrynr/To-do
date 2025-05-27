@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
-import "./bootstrap-5.3.3-dist/css/bootstrap.css";
-import "./bootstrap-5.3.3-dist/js/bootstrap.bundle.js";
 
 function App() {
   const id = useRef(0);
@@ -74,7 +72,7 @@ function App() {
                   required
                 />
                 <label className="form-label" htmlFor="ajouterUneTache">
-                  Add a new task
+                  Ajouter une nouvelle tache
                 </label>
                 <div className="valid-tooltip">Looks good!!</div>
                 <div className="invalid-tooltip">Try again!!</div>
@@ -83,9 +81,9 @@ function App() {
                 Ajouter
              </button>
             </div>
-              <button type="button" className="d-md-none dropdown-toggle btn" data-bs-toggle="collapse" data-bs-target="#detail" id="Plus"><span>Ajouter des détail</span></button>
           </div>
-          <div className=" col-md-6 d-flex flex-column justify-content-end">
+          <button type="button" className="d-md-none dropdown-toggle btn  m-0" data-bs-toggle="collapse" data-bs-target="#detail" id="Plus"><span>Ajouter des détail</span></button>
+          <div className=" col-md-6 d-md-flex flex-column justify-content-end">
             <div className="collapse d-md-block" id="detail">
               <div className="form-check">
                 <input type="checkbox" className="form-check-input" checked={newData.isPriority}

@@ -8,6 +8,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background: linear-gradient(
+    to bottom,
+    #BDD1C5 10%,
+    rgba(15, 15, 216, 0.6)
+  ) fixed;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
