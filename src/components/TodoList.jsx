@@ -5,15 +5,7 @@ import "./TodoList.css";
 import Filtre from "./Boutonfiltre.jsx";
 
 function TodoList({ tasks, onComplete, onDel }) {
-  const [filter, setFilter] = useState("all");
-
-  const filtre = document.querySelectorAll('.filtre');
-  filtre.forEach(link => {
-    link.addEventListener('click', function(e) {
-      filtre.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
+  const [filter, setFilter] = useState("all"); 
 
   const filteredTasks = tasks.filter((task) => {
     if (filter === "completed") return task.completed;
@@ -21,6 +13,7 @@ function TodoList({ tasks, onComplete, onDel }) {
     return true;
   }).slice()
     .sort((a, b) => b.isPriority - a.isPriority);
+    
 	return (
     <div className=" list-taches my-md-3 container-fluide">
       <div className="">

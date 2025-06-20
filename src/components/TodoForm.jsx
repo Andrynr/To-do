@@ -41,8 +41,6 @@ function TodoForm({ onAdd, children }) {
               <label className="form-label" htmlFor="ajouterUneTache">
                 Ajouter une nouvelle tache
               </label>
-                <div className="valid-tooltip">Looks good!!</div>
-                <div className="invalid-tooltip">Try again!!</div>
             </div>
             <button className="btn" id="btn-ajout" type="submit">
               Ajouter
@@ -66,4 +64,5 @@ function TodoForm({ onAdd, children }) {
     </form>
     );
 }
+
 export default TodoForm;
