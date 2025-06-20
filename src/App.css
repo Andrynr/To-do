@@ -46,25 +46,6 @@ html, body {
 #btn-ajout {
   background-color: #118AB2;
 }
-.task {
-  background: #0B6477;
-}
-.fullDate {
-  background-color: #C8A8E9;
-}
-.complet {
-  text-decoration: wavy;
-  background-color: var(--bs-teal);
-}
-.btn.btn-delete {
-  background-color: #979C6B;
-}
-.btn.btn-delete:hover {
-  background-color: #EF476F;
-}
 .modal-header {
   background: #928DAB;
-}
-.modal-divider {
-  color: #928DAB;
 }

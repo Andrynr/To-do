@@ -3,6 +3,7 @@ li {
   display: flex;
   padding: 10px;
   border-radius: 15px;
+  transition: all 0.5s 0s;
 }
 
 .texte {
@@ -53,7 +54,8 @@ li {
   background-color: var(--bs-teal);
 }
 .btn.btn-delete {
-  background-color: #979C6B;
+  background-color: #6a8e9f;
+  color: #fffbfb;
 }
 .btn.btn-delete:hover {
   background-color: #EF476F;

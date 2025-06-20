@@ -9,7 +9,7 @@ function Modale({ task }) {
 	                </div>
 	                <div className="modal-body">
 	                    <h5 className="card-title">Detail à propos de la tache: </h5>
-	                    <p className="mt-2">{ task.description }</p>
+	                    <p className="mt-2 " style={{ textTransorm: "capitalize" }} >{ task.description }</p>
 	                </div>
 	                <div className="border-top p-3 ">
 	                	<span className="mb-1">{ task.place }</span>

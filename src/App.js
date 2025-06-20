@@ -1,17 +1,32 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const id = useRef(0);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    // Chargement des données enregistrées
+    const savedTasks = localStorage.getItem("tasks");
+
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
+  const lastId = useMemo(() => {
+    if (!tasks.length) return null;
+    return tasks.reduce((max, t) => (t.id > max ? t.id : max), -Infinity);
+  }, [tasks]);
+
+  // Enregistrement à chaque modification
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (newData) => {
+    // Ajouter une nouvelle tache
       let now = new Date();
       let temps = now.toLocaleString();
       const newTask = {
-        id: id.current++,
+        id: lastId + 1,
         text: newData.text.trim(), 
         description: newData.description.trim(), 
         place: newData.lieu, 
@@ -23,6 +38,7 @@ function App() {
   };
 
   const completeTask = (index) => {
+    // Marquer comme complet
         let now = new Date();
     setTasks(
       tasks.map((task) => 
@@ -32,13 +48,10 @@ function App() {
   };
 
   const deleteTask = (index) => {
+    // Effacer une tache
     setTasks(tasks.filter((task) => task.id !== index));
   };
   
-  useEffect(() => {
-     if(tasks.length === 0) { id.current = 0 }
-   });
-
   return (
     <div style={{ padding: "20px" }} id="corps">
       <TodoForm onAdd={addTask} >To-Do App</TodoForm>

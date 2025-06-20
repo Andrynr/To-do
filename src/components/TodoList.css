@@ -1,0 +1,7 @@
+.filtre {
+	border: solid 1px cyan;
+}
+
+.filtre:hover {
+	border: solid 1px blue;
+}

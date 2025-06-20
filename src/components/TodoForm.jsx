@@ -24,7 +24,7 @@ function TodoForm({ onAdd, children }) {
     <form onSubmit={handleSubmit}>
       <div className="row g-4">
         <div className="col-md-6">
-          <h1 className="display-3">{ children }</h1>
+          <h1 className="display-3 text-center text-md-start ">{ children }</h1>
           <div className="input-group">
             <div className="form-floating">
               <input
@@ -33,7 +33,6 @@ function TodoForm({ onAdd, children }) {
                   placeholder="..."
                   value={newData.text}
                   onChange={handleChange}
-                  capitalize="true"
                   id="ajouterUneTache"
                   name="text"
                   autoFocus
@@ -52,7 +51,7 @@ function TodoForm({ onAdd, children }) {
         </div>
         
         <button type="button" className="d-md-none dropdown-toggle btn  m-0" data-bs-toggle="collapse" data-bs-target="#detail" id="Plus"><span>Ajouter des détail</span></button>
-        <div className=" col-md-6 d-md-flex flex-column justify-content-end">
+        <div className="mt-0 col-md-6 d-md-flex flex-column justify-content-end">
           <div className="collapse d-md-block" id="detail">
             <div className="form-check">
               <input type="checkbox" className="form-check-input" checked={newData.isPriority}
@@ -60,7 +59,7 @@ function TodoForm({ onAdd, children }) {
               <label className="form-check-label" htmlFor="priorite">Prioritaire</label>
             </div>
             <textarea className="form-control mb-2" value={newData.description} onChange={handleChange} name="description"></textarea>
-            <input type="text" className="form-control mb-2" value={newData.lieu} onChange={handleChange} placeholder="Lieu" name="lieu" />
+            <input type="text" className="form-control mb-md-0" value={newData.lieu} onChange={handleChange} placeholder="Lieu" name="lieu" />
           </div>
         </div>
       </div>
