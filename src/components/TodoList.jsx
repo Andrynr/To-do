@@ -20,7 +20,6 @@ function TodoList({ tasks, onComplete, onDel }) {
         <Filtre onFiltre={setFilter} />
       </div>
       <ul className="row g-3 list-unstyled">
-      {alert("Hello")}
         {filteredTasks && filteredTasks.length > 0 ? (
           filteredTasks.map((task) => (
               <div key={task.id} className="col-md-6 col-lg-4 col-xxl-3">
@@ -31,7 +30,6 @@ function TodoList({ tasks, onComplete, onDel }) {
           ) : (
             <p className="text-center text-secondary align-middle">There is no task yet!</p>
           )}
-      }
       </ul>
     </div>
 	);

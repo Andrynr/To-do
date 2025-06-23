@@ -2,7 +2,7 @@ import "./TaskItem.css";
 
 function TaskItem({task, onDel, onComplete}) {
 	return (
-		<li className={`task ${task.classe}`} >
+		<li className={`task ${task.classe} d-flex`} >
       <a className="btn text-nowrap overflow-hidden w-100 text-start text-decoration-none " 
           data-bs-toggle="modal" role="button" 
           data-bs-container="body" href={`#dtl-${task.id}`}>
@@ -15,7 +15,7 @@ function TaskItem({task, onDel, onComplete}) {
       </span>
       <button
           id="delete"
-          className="btn btn-delete"
+          className="btn btn-delete flex-end"
           onClick={() => onDel(task.id)}
           style={{ marginLeft: "10px" }}
           >
@@ -23,7 +23,7 @@ function TaskItem({task, onDel, onComplete}) {
       </button>
       <button
           id="complete"
-          className="btn btn-success btn-sm"
+          className="btn btn-success btn-sm flex-end"
           onClick={() => onComplete(task.id)}
           style={{ marginLeft: "10px" }}
           >
