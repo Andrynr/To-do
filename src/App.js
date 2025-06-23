@@ -63,7 +63,7 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "20px" }} id="corps">
+    <div className="p-sm-4" id="corps">
       <TodoForm onAdd={addTask}>To-Do App</TodoForm>
       <TodoList tasks={tasks} onComplete={completeTask} onDel={deleteTask} />
     </div>
